@@ -8,6 +8,10 @@ import random
 import itertools
 
 def get_randomly_spread_cities(size, n_cities):
+
+"    cities = [divmod(ele, size + 1) for ele in random.sample(range((size + 1) * (size + 1)), n_cities)]"
+   
+
     """
     > This function takes in the size of the map and the number of cities to be generated 
     and returns a list of cities with their x and y coordinates. The cities are randomly spread
@@ -29,6 +33,7 @@ def get_routes(city_names):
     :return: A list of tuples representing all possible links between cities/ pairs of cities, 
             each item in the list (a link) represents a route between two cities.
     """
+    return list(itertools.combinations(city_names,2))
     pass
 
 
